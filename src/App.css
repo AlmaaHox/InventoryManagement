@@ -1,0 +1,497 @@
+.cat-multiselect {
+  position: relative;
+  width: 100%;
+}
+.cat-multiselect-input {
+  min-height: 38px;
+  border: 1.5px solid #d1c4e9;
+  border-radius: 7px;
+  background: #fff;
+  padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+.cat-multiselect-input:focus-within, .cat-multiselect-input:active {
+  border: 1.5px solid #7c4dff;
+}
+.cat-placeholder {
+  color: #aaa;
+}
+.cat-arrow {
+  margin-left: auto;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0.18rem 0.7rem 0.18rem 0.7rem;
+  font-size: 0.97rem;
+  font-weight: 500;
+  margin-right: 0.2rem;
+  background: #ede7f6;
+  color: #333;
+  margin-bottom: 2px;
+}
+.cat-badge.all {
+  background: #7c4dff;
+  color: #fff;
+}
+.cat-remove {
+  margin-left: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.cat-multiselect-dropdown {
+  position: absolute;
+  left: 0; right: 0;
+  top: 110%;
+  background: #fff;
+  border: 1.5px solid #d1c4e9;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px #0001;
+  z-index: 10;
+  margin-top: 2px;
+  padding: 0.3rem 0;
+}
+.cat-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cat-option.selected {
+  font-weight: 600;
+  color: #fff !important;
+}
+.cat-option.selected[data-label="Sidewalk Shed"] {
+  background: #66bb6a;
+  color: #fff !important;
+}
+.cat-option.selected[data-label="Scaffold"] {
+  background: #ffe082;
+  color: #333 !important;
+}
+.cat-option.selected[data-label="Shoring"] {
+  background: #8e24aa;
+  color: #fff !important;
+}
+.cat-check {
+  margin-left: auto;
+  font-size: 1.1em;
+}
+/* Custom status dropdown styles */
+.status-select {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 7px;
+  border: 1.5px solid #d1c4e9;
+  font-size: 1rem;
+  background: #fff;
+  appearance: none;
+  outline: none;
+  margin-bottom: 0.7rem;
+  transition: border 0.2s;
+}
+.status-select:focus {
+  border: 1.5px solid #7c4dff;
+}
+.status-option-completed {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+.status-option-inprogress {
+  background: #f9fbe7;
+  color: #bfa000;
+}
+.status-option-onhold {
+  background: #fffde7;
+  color: #bfa000;
+}
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+.status-dot.completed {
+  background: #66bb6a;
+}
+.status-dot.inprogress {
+  background: #cddc39;
+}
+.status-dot.onhold {
+  background: #ffe082;
+}
+
+.cat-btn {
+  width: 100%;
+  background: #f5f6f8;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  text-align: left;
+}
+.cat-btn.selected[data-label="Sidewalk Shed"] {
+  background: #e8f5e9;
+  color: #388e3c;
+  border: 2px solid #66bb6a;
+  font-weight: 600;
+}
+.cat-btn.selected[data-label="Scaffold"] {
+  background: #fffde7;
+  color: #bfa000;
+  border: 2px solid #ffe082;
+  font-weight: 600;
+}
+.cat-btn.selected[data-label="Shoring"] {
+  background: #f3e5f5;
+  color: #8e24aa;
+  border: 2px solid #8e24aa;
+  font-weight: 600;
+}
+.cat-btn.selected {
+  box-shadow: 0 0 0 2px #0001;
+}
+.cat-btn:hover[data-label="Sidewalk Shed"] {
+  background: #c8e6c9;
+  color: #388e3c;
+}
+.cat-btn:hover[data-label="Scaffold"] {
+  background: #fff9c4;
+  color: #bfa000;
+}
+.cat-btn:hover[data-label="Shoring"] {
+  background: #ede7f6;
+  color: #8e24aa;
+}
+.cat-btn:hover {
+  background: #ede7f6;
+  color: #7c4dff;
+}
+
+.status-summary-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.status-summary-card {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 1.2rem 0.5rem 1.1rem 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #0001;
+  background: #f5f5f5;
+  min-width: 180px;
+  min-height: 60px;
+}
+.status-summary-card.on-road {
+  background: linear-gradient(90deg, #ffe082 60%, #ffe082 100%);
+  color: #bfa000;
+}
+.status-summary-card.completed {
+  background: linear-gradient(90deg, #a5d6a7 60%, #66bb6a 100%);
+  color: #256029;
+}
+.status-summary-card.on-hold {
+  background: linear-gradient(90deg, #ffccbc 60%, #ef5350 100%);
+  color: #b71c1c;
+}
+.summary-count {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.summary-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  background: #f3eaff;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.01rem;
+  color: #333;
+}
+.info-icon {
+  background: #7c4dff;
+  color: #fff;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+}
+.info-text b {
+  color: #7c4dff;
+  font-weight: 600;
+}
+
+#root, .app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ececec;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.jobsite-list {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #7c4dff22;
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.search-input {
+  padding: 0.35rem 0.8rem;
+  border-radius: 7px;
+  border: 1.2px solid #d1c4e9;
+  font-size: 0.98rem;
+  background: #f8f3ff;
+  outline: none;
+  transition: border 0.2s;
+  min-width: 0;
+}
+.search-input:focus {
+  border: 1.2px solid #7c4dff;
+}
+.create-btn {
+  background: #43ea7b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 2rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #43ea7b22;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.create-btn:hover {
+  background: #388e3c;
+  box-shadow: 0 4px 16px #43ea7b33;
+}
+.jobsite-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 340px;
+  overflow-y: auto;
+}
+.jobsite-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1rem;
+  border-bottom: 1.5px solid #ede7f6;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 0.2rem;
+  transition: background 0.18s, box-shadow 0.18s;
+}
+.jobsite-li:hover {
+  background: #ede7f6;
+  box-shadow: 0 2px 8px #7c4dff11;
+}
+.jobsite-name {
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+}
+.status {
+  padding: 0.22rem 1.1rem;
+  border-radius: 20px;
+  font-size: 0.93rem;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 1px 4px #0001;
+  margin-left: 0.5rem;
+}
+.status-completed {
+  background: #66bb6a;
+  color: #fff;
+  border: 1.5px solid #388e3c;
+}
+.status-onhold {
+  background: #ff7043;
+  color: #fff;
+  border: 1.5px solid #b71c1c;
+}
+.status-inprogress {
+  background: #ffe082;
+  color: #333;
+  border: 1.5px solid #bfa000;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #0005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  border-radius: 18px;
+  min-width: 340px;
+  max-width: 95vw;
+  box-shadow: 0 4px 24px #7c4dff22;
+  position: relative;
+}
+.modal-content input, .modal-content select {
+  width: 100%;
+  margin-bottom: 1.1rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1.5px solid #d1c4e9;
+  font-size: 1.05rem;
+  background: #f3eaff;
+  outline: none;
+  transition: border 0.2s;
+}
+.modal-content input:focus, .modal-content select:focus {
+  border: 1.5px solid #7c4dff;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.modal-actions button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.05rem;
+  cursor: pointer;
+  background: #ede7f6;
+  color: #7c4dff;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.modal-actions button:last-child {
+  background: linear-gradient(90deg, #7c4dff 60%, #b39ddb 100%);
+  color: #fff;
+}
+.modal-content .close-btn {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #7c4dff;
+  cursor: pointer;
+}
+
+/* Inventory Dashboard */
+.inventory-dashboard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #7c4dff22;
+  padding: 2.5rem 2rem 1.5rem 2rem;
+}
+.back-btn {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 2rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.back-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.inventory-table-wrapper {
+  flex: 1 1 350px;
+  background: #f9f9f9;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px #7c4dff11;
+  padding: 1.2rem 1rem 1rem 1rem;
+  min-width: 350px;
+}
+.inventory-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  box-shadow: 0 1px 4px #7c4dff11;
+}
+.inventory-table th, .inventory-table td {
+  border-bottom: 1.5px solid #ede7f6;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+.inventory-table th {
+  background: #ede7f6;
+  font-weight: 600;
+  color: #7c4dff;
+  font-size: 1.01rem;
+}
+.inventory-table tr {
+  cursor: pointer;
+  border-radius: 8px;
+}
+.inventory-table tr:hover {
+  background: #f3eaff;
+}

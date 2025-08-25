@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # InventoryManagement
 =======
 
@@ -86,4 +86,4 @@ npm run lint
 ```
 
 
->>>>>>> fbde3c9 (first commit)
+
